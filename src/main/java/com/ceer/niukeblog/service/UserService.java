@@ -1,8 +1,10 @@
 package com.ceer.niukeblog.service;
 
 import com.ceer.niukeblog.entity.User;
-public interface UserService{
 
+import java.util.Map;
+
+public interface UserService{
 
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +18,7 @@ public interface UserService{
 
     int updateByPrimaryKey(User record);
 
+    Map<String, Object> register(User user);
+
+    int activation(Integer userId, String code);
 }
