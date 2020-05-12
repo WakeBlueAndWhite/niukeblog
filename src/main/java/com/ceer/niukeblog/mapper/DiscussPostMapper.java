@@ -1,7 +1,6 @@
 package com.ceer.niukeblog.mapper;
 
 import com.ceer.niukeblog.entity.DiscussPost;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * @Date 2020/4/29 14:56
  * @Version 1.0
  */
-@Mapper
+
 public interface DiscussPostMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -33,7 +32,7 @@ public interface DiscussPostMapper {
      * @return:
      * @date: 2020/4/29 14:59
      */
-    List<DiscussPost> selectDiscussPosts(@Param("userId") int userId, @Param("offset") int offset, @Param("limit") int limit);
+    List<DiscussPost> selectDiscussPosts(@Param("userId") int userId, @Param("offset") int offset, @Param("limit") int limit, @Param("orderMode") Integer orderMode);
 
     /**
      * @Description:
@@ -42,4 +41,12 @@ public interface DiscussPostMapper {
      * @date: 2020/4/29 15:00
      */
     int selectDiscussPostRows(@Param("userId") int userId);
+
+    int updateCommentCount(@Param("commentCount") Integer commentCount, @Param("id") Integer id);
+
+    int updateType(@Param("type") Integer type, @Param("id") Integer id);
+    
+    int updateStatus(@Param("status") Integer status, @Param("id") Integer id);
+
+    int updateScore(@Param("score") Double score, @Param("id") Integer id);
 }

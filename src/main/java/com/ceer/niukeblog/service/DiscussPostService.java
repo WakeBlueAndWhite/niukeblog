@@ -29,8 +29,16 @@ public interface DiscussPostService {
 
     int updateByPrimaryKey(DiscussPost record);
 
-    List<DiscussPost> findDiscussPosts(int userId, int offset, int limit);
+    List<DiscussPost> findDiscussPosts(Integer userId, Integer offset, Integer limit,Integer orderMode);
 
-    int findDiscussPostRows(int userId);
+    int findDiscussPostRows(Integer userId);
+
+    int updateCommentCount(Integer count,Integer id);
+
+    int updateType(Integer id ,Integer type);
+
+    int updateStatus(Integer id ,Integer status);
+
+    int updateScore(Integer id ,Double score);
 }
 

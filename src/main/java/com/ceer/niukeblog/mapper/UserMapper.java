@@ -21,4 +21,9 @@ public interface UserMapper {
     User selectByEmail(String email);
 
     int updateStatus(@Param("status") Integer status, @Param("userId") Integer userId);
+
+    int updateHeaderUrl(@Param("headerUrl") String headerUrl, @Param("userId") Integer userId);
+
+    int updatePassword(@Param("password") String password, @Param("id") Integer id);
+
 }
