@@ -172,4 +172,16 @@
     `status` = #{status,jdbcType=INTEGER}
     where id = #{userId,jdbcType=INTEGER}
   </update>
+
+  <update id="updateHeaderUrl">
+    update `user` set
+    `header_url` = #{headerUrl,jdbcType=VARCHAR}
+    where id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updatePassword">
+    update `user` set
+    password = #{password,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
 </mapper>
